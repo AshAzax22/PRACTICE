@@ -56,7 +56,7 @@ void merge(int a[],int beg,int mid,int end){
 		indm++;
 	}
 	printf("\nAfter merge and sort: \n");
-	for(int i =0;i<end-beg;i++){
+	for(int i =0;i<end-beg+1;i++){
 		cout<<a[beg+i]<<' ';
 	}
 	cout<<endl;
