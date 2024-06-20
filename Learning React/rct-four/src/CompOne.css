@@ -1,0 +1,10 @@
+.comp-one {
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+  margin: 5px;
+  justify-content: center;
+  width: fit-content;
+}

@@ -67,19 +67,24 @@ void postorder(struct node*root){ //traverse the left, traverse the right, print
 	
 }
 
-struct node* create(int level,string pos="left"){
+struct node* create(int level,string pos="left",int parent=0){
  	node *newnode=new  node();  // or struct node *newnode=(struct node *)malloc(sizeof(structnode));
  	int x;
 	total_level=max(level,total_level);
-	cout<<endl<<"You are at level "<<level<<endl;
-	cout<<"Enter data for "<<pos<<" child"<<endl;
+	if(level==0)
+ 		cout<<"Enter value of root node: "<<endl;
+	else{
+		cout<<"The value at current node :"<<parent<<endl;
+		cout<<"Enter data for "<<pos<<" child"<<endl;
+	}
 	cout<<"Enter -1 for no node."<<endl;
 	cin>>x;
+	cout<<endl;
 	if(x==-1)
 		return 0;
  	newnode->data=x;
- 	newnode->left=create(level+1,"left");
- 	newnode->right=create(level+1,"right");
+ 	newnode->left=create(level+1,"left",x);
+ 	newnode->right=create(level+1,"right",x);
  	return newnode;
 }
 
